@@ -4,7 +4,7 @@
 #
 Name     : traefik
 Version  : 2.0.1
-Release  : 2
+Release  : 3
 URL      : https://github.com/containous/traefik/archive/v2.0.1.tar.gz
 Source0  : https://github.com/containous/traefik/archive/v2.0.1.tar.gz
 Source1  : http://localhost/cgit/projects/traefik-vendor/snapshot/traefik-vendor-2.0.1.tar.xz
