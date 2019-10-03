@@ -1,0 +1,32 @@
+From c09107afca68191d59ab5280cc54169deffbb8e6 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Thu, 3 Oct 2019 12:39:15 -0700
+Subject: [PATCH] Switch to just building the traefik binary
+
+Add install target as well.
+---
+ Makefile | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index daf2cba..5190cf4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -36,7 +36,13 @@ DOCKER_RUN_TRAEFIK_NOTTY := docker run $(INTEGRATION_OPTS) -i $(DOCKER_RUN_OPTS)
+ 
+ PRE_TARGET ?= build-dev-image
+ 
+-default: binary
++default:
++	go build --mod=vendor
++
++install:
++	install -m 0755 -D traefik $(DESTDIR)/usr/bin/traefik
++	install -m 0644 -D contrib/systemd/traefik.service $(DESTDIR)/usr/lib/systemd/system/traefik.service
++	install -m 0644 -D traefik.sample.toml $(DESTDIR)/usr/share/traefik/traefik.sample.toml
+ 
+ ## Build Dev Docker image
+ build-dev-image: dist
+-- 
+2.23.0
+

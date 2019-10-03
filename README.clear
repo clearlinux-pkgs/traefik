@@ -1,0 +1,6 @@
+Requires manually creating the vendor content
+- extract latest sources release
+- go build
+- go mod vendor
+- clone the vendor snapshot and update git
+- push snapshot changes and tag
