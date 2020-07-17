@@ -4,7 +4,7 @@
 #
 Name     : traefik
 Version  : 2.1.4
-Release  : 4
+Release  : 5
 URL      : https://github.com/containous/traefik/archive/v2.1.4.tar.gz
 Source0  : https://github.com/containous/traefik/archive/v2.1.4.tar.gz
 Source1  : http://localhost/cgit/projects/traefik-vendor/snapshot/traefik-vendor-2.1.4.tar.xz
@@ -72,22 +72,23 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1585682938
+export SOURCE_DATE_EPOCH=1595023670
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
-make  %{?_smp_mflags}
+make  %{?_smp_mflags}  GOFLAGS='-buildmode=pie -v'
 
 
 %install
-export SOURCE_DATE_EPOCH=1585682938
+export SOURCE_DATE_EPOCH=1595023670
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/traefik
+cp %{_builddir}/traefik-2.1.4/LICENSE.md %{buildroot}/usr/share/package-licenses/traefik/4102076f5f6cfcb99db3c7b9e486e291ea14a08d
 cp %{_builddir}/traefik-2.1.4/docs/content/assets/js/hljs/LICENSE %{buildroot}/usr/share/package-licenses/traefik/cd25196630fe891662ad77810f0f6dee5bc85ddc
 cp %{_builddir}/traefik-vendor-2.1.4/cloud.google.com/go/LICENSE %{buildroot}/usr/share/package-licenses/traefik/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 cp %{_builddir}/traefik-vendor-2.1.4/contrib.go.opencensus.io/exporter/ocagent/LICENSE %{buildroot}/usr/share/package-licenses/traefik/7df059597099bb7dcf25d2a9aedfaf4465f72d8d
@@ -277,6 +278,7 @@ cp %{_builddir}/traefik-vendor-2.1.4/golang.org/x/xerrors/LICENSE %{buildroot}/u
 cp %{_builddir}/traefik-vendor-2.1.4/gonum.org/v1/gonum/LICENSE %{buildroot}/usr/share/package-licenses/traefik/f4de14cc01698a2dc45d9a22782ea1491cd6737d
 cp %{_builddir}/traefik-vendor-2.1.4/google.golang.org/api/LICENSE %{buildroot}/usr/share/package-licenses/traefik/ab32a5c14ccc0a6d38e173568a5577493e3f6870
 cp %{_builddir}/traefik-vendor-2.1.4/google.golang.org/api/googleapi/internal/uritemplates/LICENSE %{buildroot}/usr/share/package-licenses/traefik/e99e0980a6d8f06248a213a988ba1bb3c8d4a76b
+cp %{_builddir}/traefik-vendor-2.1.4/google.golang.org/api/internal/third_party/uritemplates/LICENSE %{buildroot}/usr/share/package-licenses/traefik/475b0ccf682da5e05e3aa1eb6146b30132ae717d
 cp %{_builddir}/traefik-vendor-2.1.4/google.golang.org/appengine/LICENSE %{buildroot}/usr/share/package-licenses/traefik/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 cp %{_builddir}/traefik-vendor-2.1.4/google.golang.org/genproto/LICENSE %{buildroot}/usr/share/package-licenses/traefik/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 cp %{_builddir}/traefik-vendor-2.1.4/google.golang.org/grpc/LICENSE %{buildroot}/usr/share/package-licenses/traefik/2b8b815229aa8a61e483fb4ba0588b8b6c491890
@@ -353,9 +355,11 @@ cp %{_builddir}/traefik-vendor-2.1.4/sigs.k8s.io/yaml/LICENSE %{buildroot}/usr/s
 /usr/share/package-licenses/traefik/3ad128f30b382b49f591245750c269076248de2b
 /usr/share/package-licenses/traefik/3faf341fbc32621fe1ac089ae2ab7a23980fc189
 /usr/share/package-licenses/traefik/4052101a660a7d8343c13ada130123f75f1dd408
+/usr/share/package-licenses/traefik/4102076f5f6cfcb99db3c7b9e486e291ea14a08d
 /usr/share/package-licenses/traefik/417483c9ccd2847921fd8605edf02b5a243b4761
 /usr/share/package-licenses/traefik/4278180522ac398eca5a90de73b4f29a4e9aef82
 /usr/share/package-licenses/traefik/45885a47419b7bcba46b7523d6e815152504899e
+/usr/share/package-licenses/traefik/475b0ccf682da5e05e3aa1eb6146b30132ae717d
 /usr/share/package-licenses/traefik/47d5fd8dcd2cb78a5663e9862d8d8ca71eb94a0f
 /usr/share/package-licenses/traefik/4da388cb14535cb8d2beb61b160aab2a2043a8c0
 /usr/share/package-licenses/traefik/4f14209673d873df30aefe448304160c9b688336
