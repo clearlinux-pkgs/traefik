@@ -1,15 +1,19 @@
-From c09107afca68191d59ab5280cc54169deffbb8e6 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: William Douglas <william.douglas@intel.com>
 Date: Thu, 3 Oct 2019 12:39:15 -0700
 Subject: [PATCH] Switch to just building the traefik binary
 
 Add install target as well.
+
+2020-07-21 update: build a statically-linked PIE binary
+
+Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
 ---
  Makefile | 8 +++++++-
  1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/Makefile b/Makefile
-index daf2cba..5190cf4 100644
+index 0608d83..99b5672 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -36,7 +36,13 @@ DOCKER_RUN_TRAEFIK_NOTTY := docker run $(INTEGRATION_OPTS) -i $(DOCKER_RUN_OPTS)
@@ -18,7 +22,7 @@ index daf2cba..5190cf4 100644
  
 -default: binary
 +default:
-+	go build --mod=vendor
++	go build -mod=vendor -buildmode=pie -v -ldflags '-extldflags "-static-pie"' -tags netgo,osusergo
 +
 +install:
 +	install -m 0755 -D traefik $(DESTDIR)/usr/bin/traefik
@@ -27,6 +31,3 @@ index daf2cba..5190cf4 100644
  
  ## Build Dev Docker image
  build-dev-image: dist
--- 
-2.23.0
-

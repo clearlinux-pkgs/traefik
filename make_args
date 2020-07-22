@@ -1,1 +1,0 @@
-GOFLAGS='-buildmode=pie -v'

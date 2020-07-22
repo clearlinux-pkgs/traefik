@@ -4,7 +4,7 @@
 #
 Name     : traefik
 Version  : 2.1.4
-Release  : 6
+Release  : 7
 URL      : https://github.com/containous/traefik/archive/v2.1.4.tar.gz
 Source0  : https://github.com/containous/traefik/archive/v2.1.4.tar.gz
 Source1  : http://localhost/cgit/projects/traefik-vendor/snapshot/traefik-vendor-2.1.4.tar.xz
@@ -72,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1595023670
+export SOURCE_DATE_EPOCH=1595389902
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -81,11 +81,11 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
-make  %{?_smp_mflags}  GOFLAGS='-buildmode=pie -v'
+make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1595023670
+export SOURCE_DATE_EPOCH=1595389902
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/traefik
 cp %{_builddir}/traefik-2.1.4/LICENSE.md %{buildroot}/usr/share/package-licenses/traefik/4102076f5f6cfcb99db3c7b9e486e291ea14a08d
