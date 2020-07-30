@@ -1,6 +1,8 @@
 Requires manually creating the vendor content
 - extract latest sources release
 - go build
+- go generate (requires https://github.com/containous/go-bindata)
 - go mod vendor
-- clone the vendor snapshot and update git
+- clone the vendor snapshot and update git by removing the old vendor content
+  and copying the new vendor content into place
 - push snapshot changes and tag
