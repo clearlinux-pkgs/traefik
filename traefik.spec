@@ -4,7 +4,7 @@
 #
 Name     : traefik
 Version  : 2.2.8
-Release  : 8
+Release  : 9
 URL      : https://github.com/containous/traefik/archive/v2.2.8/traefik-2.2.8.tar.gz
 Source0  : https://github.com/containous/traefik/archive/v2.2.8/traefik-2.2.8.tar.gz
 Source1  : http://localhost/cgit/projects/traefik-vendor/snapshot/traefik-vendor-2.2.8.tar.xz
