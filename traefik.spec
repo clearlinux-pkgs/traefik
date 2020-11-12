@@ -4,7 +4,7 @@
 #
 Name     : traefik
 Version  : v2.3.2
-Release  : 12
+Release  : 13
 URL      : https://github.com/containous/traefik/archive/v2.3.2/traefik-v2.3.2.tar.gz
 Source0  : https://github.com/containous/traefik/archive/v2.3.2/traefik-v2.3.2.tar.gz
 Source1  : http://localhost/cgit/projects/traefik-vendor/snapshot/traefik-vendor-2.3.2.tar.xz
@@ -72,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1605125829
+export SOURCE_DATE_EPOCH=1605150610
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -85,7 +85,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1605125829
+export SOURCE_DATE_EPOCH=1605150610
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/traefik
 cp %{_builddir}/traefik-2.3.2/LICENSE.md %{buildroot}/usr/share/package-licenses/traefik/181202e4feb55534e70ac8a723f83a6f2ca262ae
@@ -276,6 +276,8 @@ cp %{_builddir}/traefik-vendor-2.3.2/github.com/stretchr/objx/LICENSE %{buildroo
 cp %{_builddir}/traefik-vendor-2.3.2/github.com/stretchr/testify/LICENSE %{buildroot}/usr/share/package-licenses/traefik/892204393ca075d09c8b1c1d880aba1ae0a2b805
 cp %{_builddir}/traefik-vendor-2.3.2/github.com/stvp/go-udp-testing/LICENSE %{buildroot}/usr/share/package-licenses/traefik/6ce9c3ae364ebab944f93b98553bd0e8efe93671
 cp %{_builddir}/traefik-vendor-2.3.2/github.com/tinylib/msgp/LICENSE %{buildroot}/usr/share/package-licenses/traefik/6ee3b1301fdafb4771b65d6ecc15ed27e9864107
+cp %{_builddir}/traefik-vendor-2.3.2/github.com/traefik/paerser/LICENSE %{buildroot}/usr/share/package-licenses/traefik/3b353f82008f9dd0c25ffe2d291438f137275517
+cp %{_builddir}/traefik-vendor-2.3.2/github.com/traefik/yaegi/LICENSE %{buildroot}/usr/share/package-licenses/traefik/5a2e83a4a737b79bf2dfa69be43ac24c120f0721
 cp %{_builddir}/traefik-vendor-2.3.2/github.com/transip/gotransip/v6/LICENSE %{buildroot}/usr/share/package-licenses/traefik/1e71af214ea76876d0651b967832c580fdf102ec
 cp %{_builddir}/traefik-vendor-2.3.2/github.com/uber/jaeger-client-go/LICENSE %{buildroot}/usr/share/package-licenses/traefik/7df059597099bb7dcf25d2a9aedfaf4465f72d8d
 cp %{_builddir}/traefik-vendor-2.3.2/github.com/uber/jaeger-lib/LICENSE %{buildroot}/usr/share/package-licenses/traefik/7df059597099bb7dcf25d2a9aedfaf4465f72d8d
@@ -391,6 +393,7 @@ cp %{_builddir}/traefik-vendor-2.3.2/sigs.k8s.io/yaml/LICENSE %{buildroot}/usr/s
 /usr/share/package-licenses/traefik/34b266cae5bba7e3b33a080c3d328f9aa598e806
 /usr/share/package-licenses/traefik/376caa2cd54c4196280157d071524614350e7ce8
 /usr/share/package-licenses/traefik/3ad128f30b382b49f591245750c269076248de2b
+/usr/share/package-licenses/traefik/3b353f82008f9dd0c25ffe2d291438f137275517
 /usr/share/package-licenses/traefik/3faf341fbc32621fe1ac089ae2ab7a23980fc189
 /usr/share/package-licenses/traefik/4052101a660a7d8343c13ada130123f75f1dd408
 /usr/share/package-licenses/traefik/417483c9ccd2847921fd8605edf02b5a243b4761
@@ -410,6 +413,7 @@ cp %{_builddir}/traefik-vendor-2.3.2/sigs.k8s.io/yaml/LICENSE %{buildroot}/usr/s
 /usr/share/package-licenses/traefik/56b820712432e458f05f883566ca8cd85dcdaad5
 /usr/share/package-licenses/traefik/580c0a1f1386fe13bce395d23bdaf3b14ae2e20b
 /usr/share/package-licenses/traefik/598f87f072f66e2269dd6919292b2934dbb20492
+/usr/share/package-licenses/traefik/5a2e83a4a737b79bf2dfa69be43ac24c120f0721
 /usr/share/package-licenses/traefik/5a7d7df655ba40478fae80a6abafc6afc36f9b6a
 /usr/share/package-licenses/traefik/5ad2002bc8d2b22e2034867d159f71ba6258e18f
 /usr/share/package-licenses/traefik/5d06409981dfdb6c13963148f9a18c5c3eaac4fe
