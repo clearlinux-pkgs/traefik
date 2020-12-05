@@ -4,7 +4,7 @@
 #
 Name     : traefik
 Version  : 2.3.3
-Release  : 15
+Release  : 16
 URL      : https://github.com/traefik/traefik/archive/v2.3.3/traefik-2.3.3.tar.gz
 Source0  : https://github.com/traefik/traefik/archive/v2.3.3/traefik-2.3.3.tar.gz
 Source1  : http://localhost/cgit/projects/traefik-vendor/snapshot/traefik-vendor-2.3.3.tar.xz
