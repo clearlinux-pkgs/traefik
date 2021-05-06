@@ -4,7 +4,7 @@
 #
 Name     : traefik
 Version  : 2.4.5
-Release  : 24
+Release  : 25
 URL      : https://github.com/traefik/traefik/archive/v2.4.5/traefik-2.4.5.tar.gz
 Source0  : https://github.com/traefik/traefik/archive/v2.4.5/traefik-2.4.5.tar.gz
 Source1  : http://localhost/cgit/projects/traefik-vendor/snapshot/traefik-vendor-2.4.5.tar.xz
