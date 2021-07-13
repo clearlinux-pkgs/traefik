@@ -6,6 +6,8 @@ Subject: [PATCH] Switch to just building the traefik binary
 Add install target as well.
 
 2020-07-21 update: build a statically-linked PIE binary
+2021-07-13 update: disable static PIE enablement, since this combination of build flags no
+                   longer works with Go 1.16 and results in SIGTRAP
 
 Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
 ---
@@ -13,7 +15,7 @@ Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
  1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/Makefile b/Makefile
-index 02fc779..354085f 100644
+index 02fc779..d3c7273 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -39,7 +39,13 @@ PRE_TARGET ?= build-dev-image
@@ -22,7 +24,7 @@ index 02fc779..354085f 100644
  
 -default: binary
 +default:
-+	go build -mod=vendor -buildmode=pie -v -ldflags '-linkmode external -extldflags "-static-pie"' -tags netgo,osusergo
++	go build -mod=vendor
 +
 +install:
 +	install -m 0755 -D traefik $(DESTDIR)/usr/bin/traefik

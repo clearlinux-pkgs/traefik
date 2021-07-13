@@ -4,7 +4,7 @@
 #
 Name     : traefik
 Version  : 2.4.5
-Release  : 27
+Release  : 28
 URL      : https://github.com/traefik/traefik/archive/v2.4.5/traefik-2.4.5.tar.gz
 Source0  : https://github.com/traefik/traefik/archive/v2.4.5/traefik-2.4.5.tar.gz
 Source1  : http://localhost/cgit/projects/traefik-vendor/snapshot/traefik-vendor-2.4.5.tar.xz
@@ -72,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1613700315
+export SOURCE_DATE_EPOCH=1626197453
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -85,7 +85,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1613700315
+export SOURCE_DATE_EPOCH=1626197453
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/traefik
 cp %{_builddir}/traefik-2.4.5/LICENSE.md %{buildroot}/usr/share/package-licenses/traefik/b610f9367f8cbc6221c6c9319caf09ab07786268
